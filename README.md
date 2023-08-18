@@ -9,6 +9,7 @@ Deze documentatie biedt een stapsgewijze handleiding over hoe het project geïmp
 4. Training
 5. TensorBoard
 6. Trainingsvoortgang
+7. Final word
 
 ### 1. Vereisten
 - Unity installatie.
@@ -24,10 +25,21 @@ Deze documentatie biedt een stapsgewijze handleiding over hoe het project geïmp
 ### 3. Project Setup
 1. Open Unity Hub en maak een nieuw Unity project aan.
 2. Importeer het ML-Agents pakket in je project.
-3. Boots een kruispunt na, dit kan je makkelijk doen door de Asset Store te raadplegen. Het asset dat voor dit project gebruikt werd kan je vinden op het volgende link: https://assetstore.unity.com/packages/3d/environments/urban/city-package-107224
+3. Boots een kruispunt na, dit kan je makkelijk doen door de Asset Store te raadplegen. Het asset dat voor dit project gebruikt werd kan je vinden op het volgende link: https://assetstore.unity.com/packages/3d/environments/urban/city-package-107224.
+
+![Scene](./screenshots/environment.png)
+
 4. Maak de nodige GameObjects aan. In dit geval is dat de Agent en de Target.
+
+![Agent](./screenshots/agent1.png) ![Agent](./screenshots/agent2.png)
+
 5. Maak een "Spawner" aan. Deze zal verantwoordelijk zijn voor het creëren van obstakels.
+
+![Spawner](./screenshots/spawner.png)
+
 6. Maak een .yaml file aan. Deze file zet je onder de config file in de hoofdmap van het project. In dit project noemt deze file de TrafficAgent.yaml, je kan de configuratie hieronder terugvinden.
+
+![Config](./screenshots/trafficagentyaml.png)   
 
 ### 4. Training
 1. Open de anaconda prompt en navigeer naar de project hoofdmap.
@@ -44,11 +56,13 @@ Monitor de trainingsvoortgang in TensorBoard. Bekijk de beloningscurve, beleidsv
 
 
 #### Trainingsinzichten
-Tijdens de training leert de agent geleidelijk om obstakels te vermijden en het doel te bereiken. De beloningscurve vertoont een opwaartse trend, wat aangeeft dat de agent zijn prestaties in de loop van de tijd verbetert. De beleids- en waardeverliescurves zouden ook stabiliseren naarmate de agent convergentie bereikt voor een beter beleid. Het is belangrijk om te experimenteren met hyperparameters zoals leersnelheid en netwerkarchitectuur om optimale resultaten te behalen. Bovendien kunnen langere trainingsduren leiden tot verbeterde prestaties.
 
-![TensorBoard](./screenshots)
+Voor dit project heb ik de volgende zaken waargenomen:
+Tijdens de training leert de agent geleidelijk om obstakels te vermijden en het doel te bereiken. Vanaf een bepaalde punt (200k steps), vertoont de beloningscurve een opwaartse trend, wat aangeeft dat de agent zijn prestaties in de loop van de tijd verbetert. De beleids- en waardeverliescurves zouden ook stabiliseren naarmate de agent convergentie bereikt voor een beter beleid. Het is belangrijk om te experimenteren met hyperparameters zoals leersnelheid om optimale resultaten te behalen. Bovendien kunnen langere trainingsduren leiden tot verbeterde prestaties.
 
+![TensorBoard](./screenshots/jumper.png)
 
-Gefeliciteerd! Je hebt met succes een reinforcement learning agent geïmplementeerd en getraind om een kruispunt te navigeren en obstakels te vermijden. Je project is nu klaar voor verdere experimenten en optimalisatie.
+### 7. Final word
+Gefeliciteerd! Je hebt met succes een agent geïmplementeerd en getraind om tot een doel te navigeren en obstakels te vermijden. Je project is nu klaar voor verdere experimenten en optimalisatie.
 
 Voor meer informatie, raadpleeg de [Unity ML-Agents documentatie](https://github.com/Unity-Technologies/ml-agents) en ontdek verschillende trainingsstrategieën en omgevingen.
